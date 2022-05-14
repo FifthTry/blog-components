@@ -7,5 +7,5 @@ zip: github.com/fifthtry/blog-components/archive/refs/heads/main.zip
 
 -- fpm.auto-import: ds
 
--- fpm.auto-import: blog-components/assets
+-- fpm.auto-import: fifthtry.github.io/blog-components/assets
 
