@@ -1,6 +1,10 @@
 -- import: fpm
 -- import: ds
+-- import: fifthtry.github.io/package-doc/doc as pd
+-- boolean is-mobile: false
 
+-- is-mobile: true
+if: $ftd.device == mobile
 -- record post-data:
 caption title:
 body body:
@@ -11,30 +15,29 @@ string link:
 
 -- post-data list post:
 
--- post: How to setup continuous documentation for your Github Repo
+-- post: Traffic and  Operations
 index: 1
 is-left: true
-thumbnail: $assets.files.assets.images.setup-2.png
+thumbnail: $assets.files.assets.images.traffic.jpg
 link: blog/setup/
 
-[Continuous Documentation](cdoc/), `cDoc` helps you keep your documentation up
-to date with your changing code by blocking pull requests from getting merged
-till documentation has been written and approved.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+laborum.
 
-
--- post: Taste Of `cDoc` on Day To Day
+-- post: Keep it simple and straightforward
 index: 2
 is-left: false
-thumbnail: $assets.files.assets.images.day-9.png
+thumbnail: $assets.files.assets.images.people.jpg
 link: blog/day-to-day/
 
-Yo Hello There! So you have [understood why continuous documentation is right
-thing to improve your team's happiness](blog/cdoc/), and you have already [set
-it for your repositories](blog/setup/), and are now *eager to start using it*.
-You are in the right place!
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+sunt in culpa qui officia deserunt mollit anim id est
 
 
--- post: Lack Of Documentation Is Costing You
+/-- post: Lack Of Documentation Is Costing You
 index: 3
 is-left: true
 thumbnail: $assets.files.assets.images.developer-time.png
@@ -48,7 +51,7 @@ Tech](https://en.wikipedia.org/wiki/Big_Tech), a person moving from one team to
 another and becoming productive takes 3 months.
 
 
--- post: Does Writing Documentation Slow You Down?
+/-- post: Does Writing Documentation Slow You Down?
 index: 4
 is-left: false
 thumbnail: $assets.files.assets.images.traffic.jpg
@@ -58,7 +61,22 @@ So documentation is important. And developers do understand the importance of
 the documentation. So why do developers not write documentation? Is this
 because writing documentation is extra work, and this extra work slows you down?
 
--- ds.page:
+-- ftd.column:
+width: fill
+padding-horizontal: 50
+padding-horizontal if $is-mobile: 20
+background-color: $fpm.color.main.background.base
+
+-- pd.package: Blog
+name: fifthtry.github.io/blog-components
+
+This component can be used as a Blogs component on your page.
+
+
+-- pd.component: Blog
+name: fifthtry.github.io/blog-components
+
+This is the main Blogs.
 
 
 -- featured-article: Introducing `cDoc`: Continuous Documentation
