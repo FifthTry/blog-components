@@ -2,7 +2,7 @@
 
 -- fpm.package: fifthtry.github.io/blog-components
 zip: github.com/fifthtry/blog-components/archive/refs/heads/main.zip
-base: https://raw.githubusercontent.com/FifthTry/blog-components/main
+download-base-url:: https://raw.githubusercontent.com/FifthTry/blog-components/main
 
 -- fpm.dependency: fifthtry.github.io/doc-site as ds
 
