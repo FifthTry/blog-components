@@ -15,7 +15,7 @@ string link:
 index: 1
 is-left: true
 thumbnail: $assets.files.assets.images.setup-2.png
-link: blog/setup/
+link: /
 
 [Continuous Documentation](cdoc/), `cDoc` helps you keep your documentation up
 to date with your changing code by blocking pull requests from getting merged
@@ -26,7 +26,7 @@ till documentation has been written and approved.
 index: 2
 is-left: false
 thumbnail: $assets.files.assets.images.day-9.png
-link: blog/day-to-day/
+link: /
 
 Yo Hello There! So you have [understood why continuous documentation is right
 thing to improve your team's happiness](blog/cdoc/), and you have already [set
@@ -38,7 +38,7 @@ You are in the right place!
 index: 3
 is-left: true
 thumbnail: $assets.files.assets.images.developer-time.png
-link: blog/cost/
+link: /
 
 
 Lack of documentation is causing problems for you. If you do not have proper
@@ -52,7 +52,7 @@ another and becoming productive takes 3 months.
 index: 4
 is-left: false
 thumbnail: $assets.files.assets.images.traffic.jpg
-link: blog/slow/
+link: /
 
 So documentation is important. And developers do understand the importance of
 the documentation. So why do developers not write documentation? Is this
@@ -63,7 +63,7 @@ because writing documentation is extra work, and this extra work slows you down?
 
 -- featured-article: Introducing `cDoc`: Continuous Documentation
 thumbnail: $assets.files.assets.images.process.png
-link: blog/cdoc/
+link: /
 
 After much wait we are launching “Continuous Documentation” today!
 
