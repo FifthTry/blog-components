@@ -104,12 +104,10 @@ margin-left.px if { ftd.device != "mobile" }: -20
 -- ftd.row:
 if: { ftd.device != "mobile" }
 width: fill-container
-;;id: article
 spacing.px: 30
 link: {$featured-article.link}
 
 -- ftd.row:
-;;id: left-content
 align-self: start
 width: fill-container
 
@@ -147,12 +145,10 @@ width: fill-container
 -- ftd.column:
 if: { ftd.device == "mobile" }
 width: fill-container
-;;id: article
 spacing.px: 30
 link: $featured-article.link
 
 -- ftd.row:
-;;id: left-content
 align-self: start
 width: fill-container
 
@@ -169,7 +165,6 @@ $featured-article.body
 
 -- ftd.row:
 if: {$featured-article.thumbnail != NULL}
-;;id: right-content
 align-self: end
 width: fill-container
 
@@ -190,7 +185,6 @@ width: fill-container
 
 -- ftd.row:
 if: {$featured-article.author != NULL}
-;;id: timestamp
 width: fill-container
 margin-top.px: 24
 border-top-width.px: 1
@@ -285,7 +279,6 @@ boolean is-left:
 -- ftd.row: 
 width.fixed.percent if { ftd.device != "mobile" }: 50
 width if { ftd.device == "mobile" }: fill-container
-;;id: article
 
 -- ftd.column:
 width: fill-container
