@@ -11,7 +11,7 @@ string link:
 
 -- post-data list post:
 
--- post: How to setup continuous documentation for your Github Repo
+-- post-data: How to setup continuous documentation for your Github Repo
 index: 1
 is-left: true
 thumbnail: $assets.files.assets.images.setup-2.png
@@ -22,7 +22,7 @@ to date with your changing code by blocking pull requests from getting merged
 till documentation has been written and approved.
 
 
--- post: Taste Of `cDoc` on Day To Day
+-- post-data: Taste Of `cDoc` on Day To Day
 index: 2
 is-left: false
 thumbnail: $assets.files.assets.images.day-9.png
@@ -34,7 +34,7 @@ it for your repositories](blog/setup/), and are now *eager to start using it*.
 You are in the right place!
 
 
--- post: Lack Of Documentation Is Costing You
+-- post-data: Lack Of Documentation Is Costing You
 index: 3
 is-left: true
 thumbnail: $assets.files.assets.images.developer-time.png
@@ -48,7 +48,7 @@ Tech](https://en.wikipedia.org/wiki/Big_Tech), a person moving from one team to
 another and becoming productive takes 3 months.
 
 
--- post: Does Writing Documentation Slow You Down?
+-- post-data: Does Writing Documentation Slow You Down?
 index: 4
 is-left: false
 thumbnail: $assets.files.assets.images.traffic.jpg
@@ -58,8 +58,9 @@ So documentation is important. And developers do understand the importance of
 the documentation. So why do developers not write documentation? Is this
 because writing documentation is extra work, and this extra work slows you down?
 
--- ds.page:
+-- end: post
 
+-- ds.page:
 
 -- featured-article: Introducing `cDoc`: Continuous Documentation
 thumbnail: $assets.files.assets.images.process.png
@@ -74,6 +75,7 @@ not up to date. Be it small teams or large, a 2 person startup or the Big Tech.
 -- article-list:
 list-of-posts: $post
 
+-- end: ds.page
 
 
 
@@ -83,154 +85,155 @@ list-of-posts: $post
 
 
 
--- ftd.column featured-article:
+-- component featured-article:
 caption title:
 optional body body:
 optional ftd.image-src thumbnail: 
 optional string author:
 optional string timestamp:
 string link:
-width: fill
-background-color if not $ds.is-mobile: $fpm.color.main.background.step-1
-padding-vertical: $fpm.space.space-5
-padding-horizontal if not $ds.is-mobile: $fpm.space.space-5
-border-radius: $fpm.space.space-3
-margin-left if not $ds.is-mobile: -20
+
+-- ftd.column:
+width: fill-container
+background.solid if { ftd.device != "mobile" }: $inherited.colors.background.step-1
+padding-vertical.px: 20
+padding-horizontal.px if { ftd.device != "mobile" }: 20
+border-radius.px: 12
+margin-left.px if { ftd.device != "mobile" }: -20
+
+-- ftd.row:
+if: { ftd.device != "mobile" }
+width: fill-container
+;;id: article
+spacing.px: 30
+link: {$featured-article.link}
+
+-- ftd.row:
+;;id: left-content
+align-self: start
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+
+-- ds.h2: $featured-article.title
+
+-- ds.markdown:
+
+$featured-article.body
+
+-- end: ftd.column
+
+-- ftd.row:
+if: { featured-article.thumbnail != NULL}
+width.fixed.percent: 50
+
+-- ftd.column:
+align-self: center
+width: fill-container
+
+-- ftd.image:
+src: $featured-article.thumbnail
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { ftd.device == "mobile" }
+width: fill-container
+;;id: article
+spacing.px: 30
+link: $featured-article.link
+
+-- ftd.row:
+;;id: left-content
+align-self: start
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+
+-- ds.h2: $featured-article.title
+
+-- ds.markdown:
+
+$featured-article.body
+
+-- end: ftd.column
+
+-- ftd.row:
+if: {$featured-article.thumbnail != NULL}
+;;id: right-content
+align-self: end
+width: fill-container
+
+-- ftd.column:
+align-self: center
+width: fill-container
+
+-- ftd.image:
+if: { ftd.device == "mobile"}
+src: $featured-article.thumbnail
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+if: {$featured-article.author != NULL}
+;;id: timestamp
+width: fill-container
+margin-top.px: 24
+border-top-width.px: 1
+border-color: $inherited.colors.cta-tertiary.pressed
+padding-top.px: 16
 
 
---- ftd.row:
-if: not $ds.is-mobile
-width: fill
-id: article
-spacing: 30
-link: $link
+-- ftd.row:
+align-self: start
+width: fill-container
 
 
---- ftd.row:
-id: left-content
-align: left
-width: fill
+-- ftd.text: Author: 
+if: {$featured-article.author != NULL}
+role: $inherited.types.fine-print
+color: $inherited.colors.cta-tertiary.pressed
+padding-top.px: 3
+padding-right.px: 10
 
 
---- ftd.column:
-width: fill
+-- ftd.text: $featured-article.author
+role: $inherited.types.label-big
+color: $inherited.colors.cta-tertiary.pressed
 
+-- end: ftd.row
 
---- ds.h2: $title
+-- end: ftd.row
 
+-- ftd.row:
+align-self: end
 
---- ds.markdown:
-
-$body
-
-
---- container: article
-
-
---- ftd.row:
-if: $thumbnail is not null
-id: right-content
-align: right
-width: percent 50
-
-
---- ftd.column:
-align: center
-width: fill
-
-
---- ftd.image:
-src: $thumbnail
-width: fill
-
-
---- container: ftd.main
-
-
---- ftd.column:
-if: $ds.is-mobile
-width: fill
-id: article
-spacing: 30
-link: $link
-
-
---- ftd.row:
-id: left-content
-align: left
-width: fill
-
---- ftd.column:
-width: fill
-
-
---- ds.h2: $title
-
-
---- ds.markdown:
-
-$body
-
---- container: article
-
-
---- ftd.row:
-if: $thumbnail is not null
-id: right-content
-align: right
-width: fill
-
-
---- ftd.column:
-align: center
-width: fill
-
-
---- ftd.image:
-src: $thumbnail
-width: fill
-
-
---- container: ftd.main
-
-
---- ftd.row:
-if: $author is not null
-id: timestamp
-width: fill
-margin-top: $fpm.space.space-6
-border-top: 1
-border-color: $fpm.color.main.cta-tertiary.pressed
-padding-top: $fpm.space.space-4
-
-
---- ftd.row:
-align: left
-width: fill
-
-
---- ftd.text: Author: 
-if: $author is not null
-role: $fpm.type.fine-print
-color: $fpm.color.main.cta-tertiary.pressed
-padding-top: 3
-padding-right: 10
-
-
---- ftd.text: $author
-role: $fpm.type.label-big
-color: $fpm.color.main.cta-tertiary.pressed
-
---- container: timestamp
-
---- ftd.row:
-align: right
-
---- ftd.text: $timestamp
-role: $fpm.type.fine-print
-color: $fpm.color.main.cta-tertiary.pressed
+-- ftd.text: 
+if: { $featured-article.timestamp != NULL}
+text: $featured-article.timestamp
+role: $inherited.types.fine-print
+color: $inherited.colors.cta-tertiary.pressed
 white-space: nowrap
 
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: featured-article
 
 
 
@@ -239,18 +242,19 @@ white-space: nowrap
 
 
 
-
--- ftd.row article-list:
+-- component article-list:
 post-data list list-of-posts:
-width: fill
-margin-top: 30
-background-color if not $ds.is-mobile: $fpm.color.main.background.step-1
-margin-left if not $ds.is-mobile: -20
-border-radius: $fpm.space.space-3
+
+-- ftd.row:
+width: fill-container
+margin-top.px: 30
+background.solid if { ftd.device != "mobile" }: $inherited.colors.background.step-1
+margin-left.px if { ftd.device != "mobile" }: -20
+border-radius.px: 12
 wrap: true
 
---- post-view:
-$loop$: $list-of-posts as $obj
+-- post-view:
+$loop$: $article-list.list-of-posts as $obj
 title: $obj.title
 body: $obj.body
 thumbnail: $obj.thumbnail
@@ -258,6 +262,9 @@ thumbnail: $obj.thumbnail
 is-left: $obj.is-left
 link: $obj.link
 
+-- end: ftd.row
+
+-- end: article-list
 
 
 
@@ -266,42 +273,49 @@ link: $obj.link
 
 
 
--- ftd.row post-view:
+
+-- component post-view:
 string title:
 string body:
 ftd.image-src thumbnail:
 string link:
 /integer index:
-boolean is-left: 
-width if not $ds.is-mobile: percent 50
-width if $ds.is-mobile: fill
-id: article
+boolean is-left:
 
+-- ftd.row: 
+width.fixed.percent if { ftd.device != "mobile" }: 50
+width if { ftd.device == "mobile" }: fill-container
+;;id: article
 
---- ftd.column:
-width: fill
-padding-horizontal if not $ds.is-mobile: 30
-padding-top: 30
-border-bottom if $ds.is-mobile: 1
-border-color: $fpm.color.main.cta-tertiary.pressed
+-- ftd.column:
+width: fill-container
+padding-horizontal.px if { ftd.device != "mobile" }: 30
+padding-top.px: 30
+border-bottom-width.px if { ftd.device == "mobile" }: 1
+border-bottom-width.px if { ftd.device != "mobile" }: 0
+border-color: $inherited.colors.cta-tertiary.pressed
 
+-- ftd.column:
+link: $post-view.link
+width: fill-container
 
+-- ftd.image:
+src: $post-view.thumbnail
+width: fill-container
 
---- ftd.column:
-link: $link
-width: fill
+-- ds.h3: $post-view.title
 
---- ftd.image:
-src: $thumbnail
-width: fill
+-- ds.markdown:
 
---- ds.h3: $title
+$post-view.body
 
---- ds.markdown:
+-- end: ftd.column
 
-$body
+-- end: ftd.column
 
+-- end: ftd.row
 
+-- end: post-view
 
 
 
