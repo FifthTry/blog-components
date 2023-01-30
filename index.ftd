@@ -104,7 +104,7 @@ margin-left.px if { ftd.device != "mobile" }: -20
 -- ftd.row:
 if: { ftd.device != "mobile" }
 width: fill-container
-spacing.px: 30
+spacing.fixed.px: 30
 link: {$featured-article.link}
 
 -- ftd.row:
@@ -145,7 +145,7 @@ width: fill-container
 -- ftd.column:
 if: { ftd.device == "mobile" }
 width: fill-container
-spacing.px: 30
+spacing.fixed.px: 30
 link: $featured-article.link
 
 -- ftd.row:
