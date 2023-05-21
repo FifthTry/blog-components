@@ -1,0 +1,315 @@
+-- import: fastn
+-- import: ds
+
+
+-- record post-data:
+caption title:
+body body:
+optional ftd.image-src thumbnail:
+integer index:
+boolean is-left:
+string link:
+
+-- post-data list post:
+
+-- post-data: How to setup continuous documentation for your Github Repo
+index: 1
+is-left: true
+thumbnail: $assets.files.assets.images.setup-2.png
+link: index.html
+
+[Continuous Documentation](cdoc/), `cDoc` helps you keep your documentation up
+to date with your changing code by blocking pull requests from getting merged
+till documentation has been written and approved.
+
+
+-- post-data: Taste Of `cDoc` on Day To Day
+index: 2
+is-left: false
+thumbnail: $assets.files.assets.images.day-9.png
+link: index.html
+
+Yo Hello There! So you have [understood why continuous documentation is right
+thing to improve your team's happiness](blog/cdoc/), and you have already [set
+it for your repositories](blog/setup/), and are now *eager to start using it*.
+You are in the right place!
+
+
+-- post-data: Lack Of Documentation Is Costing You
+index: 3
+is-left: true
+thumbnail: $assets.files.assets.images.developer-time.png
+link: index.html
+
+
+Lack of documentation is causing problems for you. If you do not have proper
+documentation, onboarding a new team member is slow. It takes a lot of time for
+that person to become productive. In at least one of the [Big
+Tech](https://en.wikipedia.org/wiki/Big_Tech), a person moving from one team to
+another and becoming productive takes 3 months.
+
+
+-- post-data: Does Writing Documentation Slow You Down?
+index: 4
+is-left: false
+thumbnail: $assets.files.assets.images.traffic.jpg
+link: index
+
+So documentation is important. And developers do understand the importance of
+the documentation. So why do developers not write documentation? Is this
+because writing documentation is extra work, and this extra work slows you down?
+
+-- end: post
+
+-- ds.page:
+
+-- featured-article: Introducing `cDoc`: Continuous Documentation
+thumbnail: $assets.files.assets.images.process.png
+link: /
+
+After much wait we are launching “Continuous Documentation” today!
+
+One common problem that many tech companies face is that their documentation is
+not up to date. Be it small teams or large, a 2 person startup or the Big Tech.
+
+
+-- article-list:
+list-of-posts: $post
+
+-- end: ds.page
+
+
+
+
+
+
+
+
+
+-- component featured-article:
+caption title:
+optional body body:
+optional ftd.image-src thumbnail: 
+optional string author:
+optional string timestamp:
+string link:
+
+-- ftd.column:
+width: fill-container
+background.solid if { ftd.device != "mobile" }: $inherited.colors.background.step-1
+padding-vertical.px: 20
+padding-horizontal.px if { ftd.device != "mobile" }: 20
+border-radius.px: 12
+margin-left.px if { ftd.device != "mobile" }: -20
+
+-- ftd.row:
+if: { ftd.device != "mobile" }
+width: fill-container
+spacing.fixed.px: 30
+link: {$featured-article.link}
+
+-- ftd.row:
+align-self: start
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+
+-- ds.h2: $featured-article.title
+
+-- ds.markdown:
+
+$featured-article.body
+
+-- end: ftd.column
+
+-- ftd.row:
+if: { featured-article.thumbnail != NULL}
+width.fixed.percent: 50
+
+-- ftd.column:
+align-self: center
+width: fill-container
+
+-- ftd.image:
+src: $featured-article.thumbnail
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { ftd.device == "mobile" }
+width: fill-container
+spacing.fixed.px: 30
+link: $featured-article.link
+
+-- ftd.row:
+align-self: start
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+
+-- ds.h2: $featured-article.title
+
+-- ds.markdown:
+
+$featured-article.body
+
+-- end: ftd.column
+
+-- ftd.row:
+if: {$featured-article.thumbnail != NULL}
+align-self: end
+width: fill-container
+
+-- ftd.column:
+align-self: center
+width: fill-container
+
+-- ftd.image:
+if: { ftd.device == "mobile"}
+src: $featured-article.thumbnail
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+if: {$featured-article.author != NULL}
+width: fill-container
+margin-top.px: 24
+border-top-width.px: 1
+border-color: $inherited.colors.cta-tertiary.pressed
+padding-top.px: 16
+
+
+-- ftd.row:
+align-self: start
+width: fill-container
+
+
+-- ftd.text: Author: 
+if: {$featured-article.author != NULL}
+role: $inherited.types.fine-print
+color: $inherited.colors.cta-tertiary.pressed
+padding-top.px: 3
+padding-right.px: 10
+
+
+-- ftd.text: $featured-article.author
+role: $inherited.types.label-big
+color: $inherited.colors.cta-tertiary.pressed
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+align-self: end
+
+-- ftd.text: 
+if: { $featured-article.timestamp != NULL}
+text: $featured-article.timestamp
+role: $inherited.types.fine-print
+color: $inherited.colors.cta-tertiary.pressed
+white-space: nowrap
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: featured-article
+
+
+
+
+
+
+
+
+-- component article-list:
+post-data list list-of-posts:
+
+-- ftd.row:
+width: fill-container
+margin-top.px: 30
+background.solid if { ftd.device != "mobile" }: $inherited.colors.background.step-1
+margin-left.px if { ftd.device != "mobile" }: -20
+border-radius.px: 12
+wrap: true
+
+-- post-view:
+$loop$: $article-list.list-of-posts as $obj
+title: $obj.title
+body: $obj.body
+thumbnail: $obj.thumbnail
+/index: $obj.index
+is-left: $obj.is-left
+link: $obj.link
+
+-- end: ftd.row
+
+-- end: article-list
+
+
+
+
+
+
+
+
+
+-- component post-view:
+string title:
+string body:
+ftd.image-src thumbnail:
+string link:
+/integer index:
+boolean is-left:
+
+-- ftd.row: 
+width.fixed.percent if { ftd.device != "mobile" }: 50
+width if { ftd.device == "mobile" }: fill-container
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px if { ftd.device != "mobile" }: 30
+padding-top.px: 30
+border-bottom-width.px if { ftd.device == "mobile" }: 1
+border-bottom-width.px if { ftd.device != "mobile" }: 0
+border-color: $inherited.colors.cta-tertiary.pressed
+
+-- ftd.column:
+link: $post-view.link
+width: fill-container
+
+-- ftd.image:
+src: $post-view.thumbnail
+width: fill-container
+
+-- ds.h3: $post-view.title
+
+-- ds.markdown:
+
+$post-view.body
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: post-view
+
+
+
