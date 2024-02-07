@@ -1,0 +1,51 @@
+{
+  "files": {
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "AAE21E13962EE88449DDE7F270E5833AB1E4BBC15A4AA5CDF269A22BF0521C88",
+      "size": 194
+    },
+    "LICENSE": {
+      "name": "LICENSE",
+      "checksum": "5B8B83357C092AC57F28508D18CAB65E4965AAA3BA61226DE038719E022638C1",
+      "size": 1516
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "46E7A1D83D5CE82C9938938BB874A679A68F64A36A63D6FC4658345417EBC763",
+      "size": 47
+    },
+    "assets/images/day-9.png": {
+      "name": "assets/images/day-9.png",
+      "checksum": "2EA5CDABF7F61E003326006831FD36FEFE07EDD59E82528F8E22E068A43918CC",
+      "size": 302628
+    },
+    "assets/images/developer-time.png": {
+      "name": "assets/images/developer-time.png",
+      "checksum": "1308C5B93E42F4CDC5224E69326E380E31E8788B864D76C025C4FAE0A26F98BD",
+      "size": 2517587
+    },
+    "assets/images/process.png": {
+      "name": "assets/images/process.png",
+      "checksum": "05E6017F67C72867894F9E43318CA37C7A023FA824E9B00B4268DF1DAEEDDDB0",
+      "size": 509976
+    },
+    "assets/images/setup-2.png": {
+      "name": "assets/images/setup-2.png",
+      "checksum": "27C0A05A5633353CEC3CC82FC5EB2D6F7604862531A73B5BA700E18905EA3AF8",
+      "size": 415008
+    },
+    "assets/images/traffic.jpg": {
+      "name": "assets/images/traffic.jpg",
+      "checksum": "19F3B9BBA447F0A44D39A7306AAB15BB05D88AB3184673FFA386AA51B59F9146",
+      "size": 76421
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "E2C4C2D92FB35E88B026E91139D44037B4E0B1474FBE5CA535ED36AB10A40022",
+      "size": 6073
+    }
+  },
+  "zip_url": "https://codeload.github.com/fifthtry/blog-components/zip/refs/heads/main",
+  "checksum": "E77B70A8D390872CAB2AB778D49FEE47C4FE420253175DD367E8133144A243FA"
+}
